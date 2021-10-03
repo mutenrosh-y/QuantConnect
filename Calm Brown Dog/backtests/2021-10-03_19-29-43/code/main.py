@@ -1,6 +1,4 @@
-# from AlgorithmImports import *
-# from QuantConnect.Algorithm import QCAlgorithm
-# from QuantConnect import Resolution
+from AlgorithmImports import *
 class CalmBrownDog(QCAlgorithm):
 
     def Initialize(self):
