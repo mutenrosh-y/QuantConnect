@@ -1,0 +1,6 @@
+2020-10-01 00:00:00 Launching analysis for 1977689168 with LEAN Engine v2.5.0.0
+2020-10-01 00:00:00 BUY SPY @334.89
+2020-12-05 00:00:00 Warning: all market orders sent using daily data, or market orders sent after hours are automatically converted into MarketOnOpen orders.
+2020-12-05 00:00:00 SELL SPY @369.85
+2021-01-05 00:00:00 BUY SPY @368.79
+2021-10-02 00:00:00 Algorithm Id:(1977689168) completed in 0.68 seconds at 2k data points per second. Processing total of 1,133 data points.

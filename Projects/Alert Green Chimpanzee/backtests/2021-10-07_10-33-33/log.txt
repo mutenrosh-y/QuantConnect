@@ -1,0 +1,114 @@
+2021-10-07T05:03:35.1956485Z TRACE:: Config.Get(): Configuration key not found. Key: data-directory - Using default value: ../../../Data/
+2021-10-07T05:03:35.2066433Z TRACE:: Config.Get(): Configuration key not found. Key: version-id - Using default value: 
+2021-10-07T05:03:35.2089648Z TRACE:: Config.Get(): Configuration key not found. Key: cache-location - Using default value: /Lean/Data
+2021-10-07T05:03:35.2105482Z TRACE:: Engine.Main(): LEAN ALGORITHMIC TRADING ENGINE v2.5.0.0 Mode: DEBUG (64bit) Host: Shreys-MacBook-Pro
+2021-10-07T05:03:35.2389279Z TRACE:: Python for .NET Assembly: Python.Runtime, Version=2.0.6.0, Culture=neutral, PublicKeyToken=5000fea6cba702dd
+2021-10-07T05:03:35.2550219Z TRACE:: Engine.Main(): Started 5:03 AM
+2021-10-07T05:03:35.2651358Z TRACE:: Config.Get(): Configuration key not found. Key: lean-manager-type - Using default value: LocalLeanManager
+2021-10-07T05:03:35.2981920Z TRACE:: JobQueue.NextJob(): Selected /LeanCLI/main.py
+2021-10-07T05:03:35.4251212Z TRACE:: Config.GetValue(): scheduled-event-leaky-bucket-capacity - Using default value: 120
+2021-10-07T05:03:35.4259139Z TRACE:: Config.GetValue(): scheduled-event-leaky-bucket-time-interval-minutes - Using default value: 1440
+2021-10-07T05:03:35.4267907Z TRACE:: Config.GetValue(): scheduled-event-leaky-bucket-refill-amount - Using default value: 18
+2021-10-07T05:03:35.4310594Z TRACE:: Config.Get(): Configuration key not found. Key: job-organization-id - Using default value: 
+2021-10-07T05:03:35.4332440Z TRACE:: Config.Get(): Configuration key not found. Key: data-permission-manager - Using default value: DataPermissionManager
+2021-10-07T05:03:35.4510013Z TRACE:: AlgorithmManager.CreateTokenBucket(): Initializing LeakyBucket: Capacity: 120 RefillAmount: 18 TimeInterval: 1440
+2021-10-07T05:03:35.4533034Z TRACE:: Config.GetValue(): algorithm-manager-time-loop-maximum - Using default value: 20
+2021-10-07T05:03:35.4707880Z TRACE:: TextSubscriptionDataSourceReader.SetCacheSize(): Setting cache size to 71582788 items
+2021-10-07T05:03:35.7798621Z TRACE:: Config.GetValue(): algorithm-creation-timeout - Using default value: 90
+2021-10-07T05:03:35.7845931Z TRACE:: PythonInitializer.Initialize(): start...
+2021-10-07T05:03:36.9116449Z TRACE:: PythonInitializer.Initialize(): ended
+2021-10-07T05:03:36.9225979Z TRACE:: AlgorithmPythonWrapper(): Python version 3.6.8 |Anaconda, Inc.| (default, Dec 30 2018, 01:25:33) 
+[GCC 7.3.0]: Importing python module main
+2021-10-07T05:03:37.5269323Z ERROR:: Loader.TryCreatePythonAlgorithm():  System.Exception: AlgorithmPythonWrapper(): NameError : name 'QCAlgorithm' is not defined
+  at <module>
+    class AlertGreenChimpanzee(QCAlgorithm):
+===
+   at Python.Runtime.PythonException.ThrowIfIsNull(IntPtr ob)
+   at Python.Runtime.PythonEngine.ImportModule(String name)
+   at Python.Runtime.Py.Import(String name)
+   at QuantConnect.AlgorithmFactory.Python.Wrappers.AlgorithmPythonWrapper..ctor(String moduleName) at /LeanCloud/CI.Builder/bin/Debug/src/QuantConnect/Lean/AlgorithmFactory/Python/Wrappers/AlgorithmPythonWrapper.cs:line 74 in main.py: line 1
+ NameError : name 'QCAlgorithm' is not defined
+   at QuantConnect.AlgorithmFactory.Python.Wrappers.AlgorithmPythonWrapper..ctor(String moduleName) in /LeanCloud/CI.Builder/bin/Debug/src/QuantConnect/Lean/AlgorithmFactory/Python/Wrappers/AlgorithmPythonWrapper.cs:line 146
+   at QuantConnect.AlgorithmFactory.Loader.TryCreatePythonAlgorithm(String assemblyPath, IAlgorithm& algorithmInstance, String& errorMessage) in /LeanCloud/CI.Builder/bin/Debug/src/QuantConnect/Lean/AlgorithmFactory/Loader.cs:line 173
+2021-10-07T05:03:37.5314097Z ERROR:: Engine.Run():  QuantConnect.Lean.Engine.Setup.AlgorithmSetupException: During the algorithm initialization, the following exception has occurred: Loader.TryCreatePythonAlgorithm(): Unable to import python module /LeanCLI/main.py. AlgorithmPythonWrapper(): NameError : name 'QCAlgorithm' is not defined
+  at <module>
+    class AlertGreenChimpanzee(QCAlgorithm):
+===
+   at Python.Runtime.PythonException.ThrowIfIsNull(IntPtr ob)
+   at Python.Runtime.PythonEngine.ImportModule(String name)
+   at Python.Runtime.Py.Import(String name)
+   at QuantConnect.AlgorithmFactory.Python.Wrappers.AlgorithmPythonWrapper..ctor(String moduleName) at /LeanCloud/CI.Builder/bin/Debug/src/QuantConnect/Lean/AlgorithmFactory/Python/Wrappers/AlgorithmPythonWrapper.cs:line 74 in main.py: line 1
+ NameError : name 'QCAlgorithm' is not defined
+   at QuantConnect.Lean.Engine.Setup.BacktestingSetupHandler.CreateAlgorithmInstance(AlgorithmNodePacket algorithmNodePacket, String assemblyPath) in /LeanCloud/CI.Builder/bin/Debug/src/QuantConnect/Lean/Engine/Setup/BacktestingSetupHandler.cs:line 104
+   at QuantConnect.Lean.Engine.Engine.Run(AlgorithmNodePacket job, AlgorithmManager manager, String assemblyPath, WorkerThread workerThread) in /LeanCloud/CI.Builder/bin/Debug/src/QuantConnect/Lean/Engine/Engine.cs:line 116
+2021-10-07T05:03:37.5352038Z TRACE:: JOB HANDLERS: 
+2021-10-07T05:03:37.5368990Z TRACE::          DataFeed:     QuantConnect.Lean.Engine.DataFeeds.FileSystemDataFeed
+2021-10-07T05:03:37.5393002Z TRACE::          Setup:        QuantConnect.Lean.Engine.Setup.ConsoleSetupHandler
+2021-10-07T05:03:37.5407431Z TRACE::          RealTime:     QuantConnect.Lean.Engine.RealTime.BacktestingRealTimeHandler
+2021-10-07T05:03:37.5419863Z TRACE::          Results:      QuantConnect.Lean.Engine.Results.BacktestingResultHandler
+2021-10-07T05:03:37.5433283Z TRACE::          Transactions: QuantConnect.Lean.Engine.TransactionHandlers.BacktestingTransactionHandler
+2021-10-07T05:03:37.5446748Z TRACE::          Alpha:        QuantConnect.Lean.Engine.Alphas.DefaultAlphaHandler
+2021-10-07T05:03:37.5457100Z TRACE::          ObjectStore:  QuantConnect.Lean.Engine.Storage.LocalObjectStore
+2021-10-07T05:03:37.5488239Z TRACE:: DefaultAlphaHandler.Exit(): Exiting...
+2021-10-07T05:03:37.5508826Z TRACE:: DefaultAlphaHandler.Exit(): Ended
+2021-10-07T05:03:37.5593861Z ERROR:: Algorithm.Initialize() Error: During the algorithm initialization, the following exception has occurred: Loader.TryCreatePythonAlgorithm(): Unable to import python module /LeanCLI/main.py. AlgorithmPythonWrapper(): NameError : name 'QCAlgorithm' is not defined
+  at <module>
+    class AlertGreenChimpanzee(QCAlgorithm):
+===
+   at Python.Runtime.PythonException.ThrowIfIsNull(IntPtr ob)
+   at Python.Runtime.PythonEngine.ImportModule(String name)
+   at Python.Runtime.Py.Import(String name)
+   at QuantConnect.AlgorithmFactory.Python.Wrappers.AlgorithmPythonWrapper..ctor(String moduleName) at /LeanCloud/CI.Builder/bin/Debug/src/QuantConnect/Lean/AlgorithmFactory/Python/Wrappers/AlgorithmPythonWrapper.cs:line 74 in main.py: line 1
+ NameError : name 'QCAlgorithm' is not defined Stack Trace: During the algorithm initialization, the following exception has occurred: Loader.TryCreatePythonAlgorithm(): Unable to import python module /LeanCLI/main.py. AlgorithmPythonWrapper(): NameError : name 'QCAlgorithm' is not defined
+  at <module>
+    class AlertGreenChimpanzee(QCAlgorithm):
+===
+   at Python.Runtime.PythonException.ThrowIfIsNull(IntPtr ob)
+   at Python.Runtime.PythonEngine.ImportModule(String name)
+   at Python.Runtime.Py.Import(String name)
+   at QuantConnect.AlgorithmFactory.Python.Wrappers.AlgorithmPythonWrapper..ctor(String moduleName) at /LeanCloud/CI.Builder/bin/Debug/src/QuantConnect/Lean/AlgorithmFactory/Python/Wrappers/AlgorithmPythonWrapper.cs:line 74 in main.py: line 1
+ NameError : name 'QCAlgorithm' is not defined
+ During the algorithm initialization, the following exception has occurred: Loader.TryCreatePythonAlgorithm(): Unable to import python module /LeanCLI/main.py. AlgorithmPythonWrapper(): NameError : name 'QCAlgorithm' is not defined
+  at <module>
+    class AlertGreenChimpanzee(QCAlgorithm):
+===
+   at Python.Runtime.PythonException.ThrowIfIsNull(IntPtr ob)
+   at Python.Runtime.PythonEngine.ImportModule(String name)
+   at Python.Runtime.Py.Import(String name)
+   at QuantConnect.AlgorithmFactory.Python.Wrappers.AlgorithmPythonWrapper..ctor(String moduleName) at /LeanCloud/CI.Builder/bin/Debug/src/QuantConnect/Lean/AlgorithmFactory/Python/Wrappers/AlgorithmPythonWrapper.cs:line 74 in main.py: line 1
+ NameError : name 'QCAlgorithm' is not defined
+2021-10-07T05:03:37.5618245Z TRACE:: BacktestingResultHandler.Exit(): starting...
+2021-10-07T05:03:37.5649693Z TRACE:: BacktestingResultHandler.Exit(): Saving logs...
+2021-10-07T05:03:37.5747172Z TRACE:: Debug: Your log was successfully created and can be retrieved from: /Results/1471629945-log.txt
+2021-10-07T05:03:37.5755173Z TRACE:: StopSafely(): waiting for 'Result Thread' thread to stop...
+2021-10-07T05:03:37.5761301Z TRACE:: BacktestingResultHandler.Run(): Ending Thread...
+2021-10-07T05:03:37.7176956Z TRACE:: Config.GetValue(): regression-update-statistics - Using default value: False
+2021-10-07T05:03:37.7210990Z TRACE:: 
+STATISTICS:: Fitness Score 0
+STATISTICS:: Kelly Criterion Estimate 0
+STATISTICS:: Kelly Criterion Probability Value 0
+STATISTICS:: Sortino Ratio 0
+STATISTICS:: Return Over Maximum Drawdown 0
+STATISTICS:: Portfolio Turnover 0
+STATISTICS:: Total Insights Generated 0
+STATISTICS:: Total Insights Closed 0
+STATISTICS:: Total Insights Analysis Completed 0
+STATISTICS:: Long Insight Count 0
+STATISTICS:: Short Insight Count 0
+STATISTICS:: Long/Short Ratio 100%
+STATISTICS:: Estimated Monthly Alpha Value $0
+STATISTICS:: Total Accumulated Estimated Alpha Value $0
+STATISTICS:: Mean Population Estimated Insight Value $0
+STATISTICS:: Mean Population Direction 0%
+STATISTICS:: Mean Population Magnitude 0%
+STATISTICS:: Rolling Averaged Population Direction 0%
+STATISTICS:: Rolling Averaged Population Magnitude 0%
+STATISTICS:: OrderListHash d41d8cd98f00b204e9800998ecf8427e
+2021-10-07T05:03:37.7221095Z TRACE:: BacktestingResultHandler.SendAnalysisResult(): Processed final packet
+2021-10-07T05:03:37.7236638Z TRACE:: Engine.Run(): Disposing of setup handler...
+2021-10-07T05:03:37.7250878Z TRACE:: Engine.Main(): Analysis Completed and Results Posted.
+2021-10-07T05:03:37.7271002Z TRACE:: Engine.Main(): Packet removed from queue: 1471629945
+2021-10-07T05:03:37.7283210Z TRACE:: LeanEngineSystemHandlers.Dispose(): start...
+2021-10-07T05:03:37.7295225Z TRACE:: LeanEngineSystemHandlers.Dispose(): Disposed of system handlers.
+2021-10-07T05:03:37.7306618Z TRACE:: LeanEngineAlgorithmHandlers.Dispose(): start...
+2021-10-07T05:03:37.7320061Z TRACE:: LeanEngineAlgorithmHandlers.Dispose(): Disposed of algorithm handlers.
